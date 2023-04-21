@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configUI()
        
         redView.backgroundColor = .red
         view.addSubview(redView)
@@ -163,3 +164,19 @@ class ViewController: UIViewController {
 
 }
 
+// UI
+private extension ViewController {
+    func configUI() {
+        configRedView()
+    }
+    
+    func configRedView() {
+        redView.backgroundColor = .red
+        view.addSubview(redView)
+        redView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.height.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.5)
+        }
+    }
+}
